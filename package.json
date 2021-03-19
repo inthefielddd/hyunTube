@@ -1,0 +1,11 @@
+{
+  "name": "hyuntube",
+  "version": "1.0.0",
+  "description": "Cloning YouTube with JavaScript and Node.js",
+  "main": "index.js",
+  "author": "inthefielddd",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
