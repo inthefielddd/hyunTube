@@ -1,6 +1,14 @@
-import app from "./app";
+dotenv.config();
 
-const PORT = 4001;
+import app from "./app";
+import "./db";
+import dotenv from "dotenv";
+
+//models
+import "./models/Video";
+import "./models/Comment";
+
+const PORT = process.env.PORT || 4001;
 
 //server
 const handleListening = () => {
