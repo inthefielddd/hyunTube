@@ -1,0 +1,37 @@
+.header {
+    background-color: $red;
+    margin-bottom: 50px;
+    .header__wrapper {
+        padding: 5px 0;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        .header__column {
+            i {
+                color: white;
+                font-size: 30px;
+            }
+            &:nth-child(2) {
+                width: 100%;
+                justify-self: center;
+            }
+            &:last-child {
+                justify-self: end;
+                ul {
+                    display: flex;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    li:not(:last-child) {
+                        margin-right: 15px;
+                    }
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

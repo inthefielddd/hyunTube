@@ -9,7 +9,7 @@ export const localsMiddleWare = (req, res, next) => {
     res.locals.routes = routes;
     res.locals.siteName = "HyunTube";
     res.locals.user = {
-        isAuthenicated: true,
+        isAuthenicated: false,
         id: 123,
     };
     next();
