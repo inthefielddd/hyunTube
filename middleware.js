@@ -8,11 +8,25 @@ const multerVideo = multer({ dest: "uploads/videos" });
 export const localsMiddleWare = (req, res, next) => {
     res.locals.routes = routes;
     res.locals.siteName = "HyunTube";
-    res.locals.user = {
-        isAuthenicated: false,
-        id: 123,
-    };
+    res.locals.user = req.user || null;
     next();
 };
 
+export const onlyPublic = (req, res, next) => {
+    if (req.user) {
+        //passport가 있기때문에 user값을 가져올 수 가 있다
+        //유저가 있다면 home으로 가져가고
+        res.redirect(routes.home);
+    } else {
+        next();
+    }
+};
+
+export const onlyPrivate = (req, res, next) => {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect(routes.home);
+    }
+};
 export const uploadVideo = multerVideo.single("fileURL");

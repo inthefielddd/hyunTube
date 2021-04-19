@@ -12,6 +12,6 @@ Cloning YouTube with JavaScript and Node.js
 -[x] Change Password
 -[x] Search
 -[x] Upload
--[] Video Detail
--[] Edit Video
+-[x] Video Detail
+-[x] Edit Video
 -[x] Delete Video
