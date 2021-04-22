@@ -16,7 +16,7 @@ import "./passport";
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 //view를 pug으로 설정한다는 뜻
 app.set("view engine", "pug");
 //upload한 파일들을 폴더로 보내기 위해

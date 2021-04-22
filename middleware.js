@@ -4,11 +4,12 @@ import routes from "./routes";
 //multer를 이용해서 fileURL값을 가져와서
 //video 파일 전체가 아닌 주소만 올린다
 const multerVideo = multer({ dest: "uploads/videos" });
+const multerAvatar = multer({ dest: "uploads/avatars" });
 
 export const localsMiddleWare = (req, res, next) => {
     res.locals.routes = routes;
     res.locals.siteName = "HyunTube";
-    res.locals.user = req.user || null;
+    res.locals.loggedUser = req.user || null;
     next();
 };
 
@@ -29,4 +30,6 @@ export const onlyPrivate = (req, res, next) => {
         res.redirect(routes.home);
     }
 };
+
 export const uploadVideo = multerVideo.single("fileURL");
+export const uploadAvatar = multerAvatar.single("avatar");

@@ -19,8 +19,7 @@ main {
 }
 
 input:not([type="file"]),
-button,
-textarea {
+button {
     resize: none;
     cursor: pointer;
     width: 100%;
